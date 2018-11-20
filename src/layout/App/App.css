@@ -1,0 +1,14 @@
+.App {
+  text-align: left;
+}
+
+.main-header a {
+  margin: 20px; 
+  color: white;
+}
+
+.main-header {
+	background: #333;
+	color: white;
+	height: 40px;
+}	
