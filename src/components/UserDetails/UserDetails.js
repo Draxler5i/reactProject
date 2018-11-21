@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class Body extends Component {
+class UserDetails extends Component {
 
     constructor(props) {
         super(props);
@@ -38,7 +38,7 @@ class Body extends Component {
                     <ul>
                         {items.map(item => (
                             <li key={item.id}>
-                                Name: {item.name} | Email: {item.email}
+                                Name: {item.name} <br/> Email: {item.email}
                             </li>    
                         ))}
                     </ul>
@@ -48,4 +48,4 @@ class Body extends Component {
     }
 }
 
-export default Body;
+export default UserDetails;
