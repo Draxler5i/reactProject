@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserDetails from '../../components/UserDetails/UserDetails';
-import SearchBar from '../../components/SearchBar/SearchBar';
+import AllUsers from '../../components/AllUsers/AllUsers'
 
 class App extends Component {
   render() {
@@ -11,8 +10,7 @@ class App extends Component {
          <a href="/">Home</a>
         </header>
       <h1>Hello react!</h1>
-      <UserDetails/>
-      <SearchBar/>
+      <AllUsers/>
       </div>
     );
   }
