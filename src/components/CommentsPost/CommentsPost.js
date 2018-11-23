@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import ProfileUser from '../ProfileUser/ProfileUser';
+import { Link } from 'react-router-dom';
+//import ProfileUser from '../ProfileUser/ProfileUser';
 
 class CommentsPost extends Component {
 
