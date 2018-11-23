@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class UserDetails extends Component {
 
@@ -38,7 +39,7 @@ class UserDetails extends Component {
                     <ul>
                         {items.map(item => (
                             <li key={item.id}>
-                                Name: {item.name} <br/> Email: {item.email}
+                                <Link to="{item.id}">{item.name}</Link>
                             </li>    
                         ))}
                     </ul>
