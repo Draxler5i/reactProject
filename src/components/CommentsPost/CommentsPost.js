@@ -39,8 +39,7 @@ class CommentsPost extends Component {
                     <ul>
                         {items.map(item => (
                             <li key={item.id}>
-                                <Link to="/{item.id}">{item.name}</Link>
-                                <Route path="/{item.name}" component={ProfileUser}/>
+                                <Link to={`/${item.id}`}>{item.name}</Link>
                             </li>    
                         ))}
                     </ul>

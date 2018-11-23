@@ -1,6 +1,8 @@
 import React from 'react';
 
-const ProfileUser = ( { match: { params : { id } } }) => {
+const ProfileUser = ({location:{pathname}}) => {
+    var print = pathname.split('/');
+    console.log(print);
     const user = {
         id : 1,
         name: 'Daniel'
@@ -12,9 +14,8 @@ const ProfileUser = ( { match: { params : { id } } }) => {
     return (
         <div>
             <h1>
-                { user.name } (id: {user.id})
+                {JSON.stringify(user)}
             </h1>
-            { user }
         </div>
     );
 };

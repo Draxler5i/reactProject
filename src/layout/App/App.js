@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import WrapperMainView from '../../components/WrapperMainView/WrapperMainView';
+import Main from '../../components/Main/Main';
 import './App.css';
 
 class App extends Component {
@@ -10,8 +10,7 @@ class App extends Component {
         <header className="main-header">
          <Link to="/">Home</Link>
         </header>
-      <h1>Hello react!</h1>
-      <WrapperMainView />
+        <Main/>
       </div>
     );
   }
