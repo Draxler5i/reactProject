@@ -11,9 +11,12 @@ const ProfileUser = ({location:{pathname}}) => {
     //const users = () =>
     fetch('https://jsonplaceholder.typicode.com/users')
         .then(res => res.json())
-        .then(users => 
-            //console.log(json)
-            console.log(users)
+        .then(users => {
+                const id = parseInt(print[1]);
+                const u = users.filter(user => user.id === id);
+                console.log(users);
+                console.log(u);
+            }
         );
 
     // const myUser = Promise.resolve(users());
