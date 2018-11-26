@@ -58,7 +58,7 @@ class WrapperMainView extends Component {
                 "Tail",
                 "Wetlands"
                 ]} />
-                <PostBody id={`1`}/>
+                <PostBody posts={posts} id={`1`}/>
                 <CommentsPost comments={comments} findPost={this.state.findPost}/>
             </div>
         );

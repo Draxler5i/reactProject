@@ -1,6 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const PostBody = (id) => {
+const PostBody = ({posts, id}) => {
 
     const post = {
             userId: 1,
@@ -17,6 +18,9 @@ const PostBody = (id) => {
             <h1>
                 {JSON.stringify(post)}
             </h1>
+            <div>
+                <Link to={`/${post.userId}`}>Author</Link>
+            </div>
         </div>
     );
 };

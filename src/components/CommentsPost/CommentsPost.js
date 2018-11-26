@@ -1,8 +1,7 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 const CommentsPost = ({comments, findPost}) => {
-    console.log(findPost);
+    //console.log(findPost);
     return (
         <div>
             <h1>Comentarios del Post</h1>
@@ -10,7 +9,7 @@ const CommentsPost = ({comments, findPost}) => {
             <ul>
             {comments.map((comment) => (
                     <li key={comment.id}>
-                        <Link to={`/${comment.id}`}>{comment.email}</Link>
+                        {comment.email}
                         <br/>
                         {comment.body}
                     </li>    
