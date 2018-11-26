@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-//import ProfileUser from '../ProfileUser/ProfileUser';
 
 class CommentsPost extends Component {
 
