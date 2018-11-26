@@ -27,7 +27,6 @@ const ProfileUser = ({location:{pathname}}) => {
                 console.log(users);
                 loquesea = users;
                 foundUser = loquesea.find(user => user.id === +print[1]);
-                
             }
         );
     //console.log(myUsers);
