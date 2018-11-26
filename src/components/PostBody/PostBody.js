@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostBody = ({posts, id}) => {
+const PostBody = ({posts, idPost}) => {
 
     const post = {
             userId: 1,

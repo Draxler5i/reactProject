@@ -7,13 +7,7 @@ const ProfileUser = ({location:{pathname}}) => {
         id : 1,
         name: 'Daniel',
         username: "Bret",
-        email: "Sincere@april.biz",
-        address: {
-            street: "Kulas Light",
-            suite: "Apt. 556",
-            city: "Gwenborough",
-            zipcode: "92998-3874"
-        }
+        email: "Sincere@april.biz"
     }; //user de la REST API
 
     if (!user) {
