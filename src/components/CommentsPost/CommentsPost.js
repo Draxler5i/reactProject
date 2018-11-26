@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CommentsPost = ({comments, users, findPost}) => {
+const CommentsPost = ({comments, findPost}) => {
     console.log(findPost);
     return (
         <div>
@@ -10,7 +10,7 @@ const CommentsPost = ({comments, users, findPost}) => {
             <ul>
             {comments.map((comment) => (
                     <li key={comment.id}>
-                        <Link to="{user.id}">{comment.email}</Link>
+                        <Link to={`/${comment.id}`}>{comment.email}</Link>
                         <br/>
                         {comment.body}
                     </li>    
