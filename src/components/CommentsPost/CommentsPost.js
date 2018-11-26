@@ -1,51 +1,24 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-class CommentsPost extends Component {
+const CommentsPost = ({comments, users, findPost}) => {
+    console.log(findPost);
+    return (
+        <div>
+            <h1>Comentarios del Post</h1>
 
-    constructor(props) {
-        super(props);
-        this.state = {
-            items: [],
-            isLoaded: false
-        }
-    }
+            <ul>
+            {comments.map((comment) => (
+                    <li key={comment.id}>
+                        <Link to="{user.id}">{comment.email}</Link>
+                        <br/>
+                        {comment.body}
+                    </li>    
+            ))}
+            </ul>
+        </div>
+    );
 
-    componentDidMount() {
-
-        fetch('https://jsonplaceholder.typicode.com/users')
-            .then(res => res.json())
-            .then(json => {
-                this.setState({
-                    items: json,
-                    isLoaded: true
-                })
-            });
-
-    }
-
-    render() {
-
-        const { isLoaded, items } = this.state;
-
-        if (!isLoaded) {
-            return <div>Loading...</div>;
-        } else {
-            return (
-                <div>
-                    Data has been loaded
-                    <br/>
-                    <ul>
-                        {items.map(item => (
-                            <li key={item.id}>
-                                <Link to={`/${item.id}`}>{item.name}</Link>
-                            </li>    
-                        ))}
-                    </ul>
-                </div>
-            );
-        }
-    }
 }
 
 export default CommentsPost;

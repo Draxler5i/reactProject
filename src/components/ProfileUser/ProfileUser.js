@@ -19,27 +19,14 @@ const ProfileUser = ({location:{pathname}}) => {
             }
         }
     }; //user de la REST API
-    let loquesea = [];
-    let foundUser = undefined;
-    fetch('https://jsonplaceholder.typicode.com/users')
-        .then(res => res.json())
-        .then(users => {
-                console.log(users);
-                loquesea = users;
-                foundUser = loquesea.find(user => user.id === +print[1]);
-            }
-        );
-    //console.log(myUsers);
-    console.log(loquesea);
+
     if (!user) {
         return <div> El Usuario no fue encontrado</div>
     }
     return (
-        <div>
-            <h1>
-                {JSON.stringify(user)}
-            </h1>
-        </div>
+        <h1>
+            {JSON.stringify(user)}
+        </h1>
     );
 };
 

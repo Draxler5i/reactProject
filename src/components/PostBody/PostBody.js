@@ -1,10 +1,6 @@
 import React from 'react';
 
-
-//const PostBody = (post) => {
 const PostBody = (id) => {
-    
-    console.log(id);
 
     const post = {
             userId: 1,

@@ -1,7 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import ProfileUser from '../ProfileUser/ProfileUser';
-import CommentsPost from '../CommentsPost/CommentsPost';
 import WrapperMainView from '../WrapperMainView/WrapperMainView';
 
 const Main = () => (

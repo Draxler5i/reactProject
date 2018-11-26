@@ -2,37 +2,49 @@ import React, { Component } from 'react';
 import CommentsPost from '../CommentsPost/CommentsPost';
 import Autocomplete from '../Autocomplete/Autocomplete';
 import PostBody from '../PostBody/PostBody';
-import { Link } from 'react-router-dom';
 
 class WrapperMainView extends Component {
-
+    
     constructor(props) {
         super(props);
         this.state = {
-            items: [],
+            users: [],
+            comments:[],
+            posts:[],
+            findPost:1,
             isLoaded: false
         }
     }
-
+    
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/users')
             .then(res => res.json())
             .then(json => {
                 this.setState({
-                    items: json,
+                    users: json
+                })
+        });
+        fetch('https://jsonplaceholder.typicode.com/comments')
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    comments: json                    
+                })
+        });
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(res => res.json())
+            .then(json => {
+                this.setState({
+                    posts: json,
                     isLoaded: true
                 })
-            });
+        });
     }
-
     render() {
+        const { isLoaded, users, comments, posts } = this.state;
 
-        const { isLoaded, items } = this.state;
-
-        if (!isLoaded) {
-            return (
+        return (
             <div>
-                <div>Loading...</div>
                 <Autocomplete
                 suggestions={[
                 "Alligator",
@@ -47,33 +59,9 @@ class WrapperMainView extends Component {
                 "Wetlands"
                 ]} />
                 <PostBody id={`1`}/>
-                <CommentsPost/>   
+                <CommentsPost comments={comments} findPost={this.state.findPost}/>
             </div>
-            )
-        } else {
-            return (
-                <div>
-                    <Autocomplete
-                    suggestions={[
-                    "Alligator",
-                    "Bask",
-                    "Crocodilian",
-                    "Death Roll",
-                    "Eggs",
-                    "Jaws",
-                    "Reptile",
-                    "Solitary",
-                    "Tail",
-                    "Wetlands"
-                    ]} />
-                    <br />
-                    Data has been loaded
-                    <br/>
-                    <PostBody id={`1`}/>
-                    <CommentsPost/>
-                </div>
-            );
-        }
+        );
     }
 };
 
