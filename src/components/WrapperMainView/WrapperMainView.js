@@ -11,7 +11,7 @@ class WrapperMainView extends Component {
             users: [],
             comments:[],
             posts:[],
-            findPost:1,
+            findPost:{},
             isLoaded: false
         }
     }
@@ -42,6 +42,12 @@ class WrapperMainView extends Component {
     }
     render() {
         const { isLoaded, users, comments, posts } = this.state;
+        const fakePost = {
+            "userId": 5,
+            "id": 1,
+            "title": "Titulo de Post",
+            "body": "Este es un ejempo de body "
+          };
 
         return (
             <div>
@@ -58,7 +64,8 @@ class WrapperMainView extends Component {
                 "Tail",
                 "Wetlands"
                 ]} />
-                <PostBody posts={posts} idPost={this.state.findPost}/>
+                {/*<PostBody findPost={this.state.findPost}/>*/}
+                <PostBody findPost={fakePost}/>
                 <CommentsPost comments={comments} findPost={this.state.findPost}/>
             </div>
         );

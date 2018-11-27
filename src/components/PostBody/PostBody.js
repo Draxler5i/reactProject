@@ -1,25 +1,19 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const PostBody = ({posts, idPost}) => {
+const PostBody = ({findPost}) => {
+    //console.log(findPost);
 
-    const post = {
-            userId: 1,
-            id: 1,
-            title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
-            body: "quia et suscipit\nsuscipit recusandae consequuntur "
-        }
-
-    if (!post) {
-        return <div> El Usuario no fue encontrado</div>
+    if (!findPost) {
+        return <div> El Post no fue encontrado</div>
     }
     return (
         <div>
             <h1>
-                {JSON.stringify(post)}
+                {JSON.stringify(findPost)}
             </h1>
             <div>
-                <Link to={`/${post.userId}`}>Author</Link>
+                <Link to={`/${findPost.userId}`}>Author</Link>
             </div>
         </div>
     );
