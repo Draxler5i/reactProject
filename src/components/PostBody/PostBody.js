@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const PostBody = ({findPost}) => {
-    //console.log(findPost);
 
     if (!findPost) {
         return <div> El Post no fue encontrado</div>

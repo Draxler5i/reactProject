@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CommentsPost = ({comments, findPost}) => {
-    //console.log(findPost);
+
     return (
         <div>
             <h1>Comentarios del Post</h1>
