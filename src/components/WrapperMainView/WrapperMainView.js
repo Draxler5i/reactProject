@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import CommentsPost from '../CommentsPost/CommentsPost';
-import Autocomplete from '../Autocomplete/Autocomplete';
+
 import PostBody from '../PostBody/PostBody';
-import WrapperProfile from '../WrapperProfile/WrapperProfile';
+
+import SearchBar from '../SearchBar/SearchBar';
 
 class WrapperMainView extends Component {
     
@@ -35,7 +36,8 @@ class WrapperMainView extends Component {
         });
     }
     render() {
-        const { isLoaded, comments, posts } = this.state;
+        
+        const { comments, posts } = this.state;
         const fakePost = {
             "userId": 9,
             "id": 1,
@@ -45,19 +47,7 @@ class WrapperMainView extends Component {
 
         return (
             <div>
-                <Autocomplete
-                suggestions={[
-                "Alligator",
-                "Bask",
-                "Crocodilian",
-                "Death Roll",
-                "Eggs",
-                "Jaws",
-                "Reptile",
-                "Solitary",
-                "Tail",
-                "Wetlands"
-                ]} />
+                <SearchBar posts={posts}  encontrado={this.state.findPost}/>
                 <PostBody findPost={fakePost}/>
                 <CommentsPost comments={comments} findPost={this.state.findPost}/>
             </div>
