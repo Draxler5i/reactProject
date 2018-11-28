@@ -36,9 +36,6 @@ class WrapperProfile extends Component {
     }
     
     render() {
-        
-        //const { foundUser, users } = this.state;
-
         return (
             <div>
                 <h1>Wrapper Profile</h1>

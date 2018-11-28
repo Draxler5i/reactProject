@@ -50,17 +50,11 @@ class WrapperMainView extends Component {
     render() {
         
         const { comments, posts } = this.state;
-        const fakePost = {
-            "userId": 9,
-            "id": 1,
-            "title": "Titulo de Post",
-            "body": "Este es un ejempo de body "
-          };
 
         return (
             <div>
                 {<SearchBar posts={posts}  changeFindPost={this.findPostSearchBar}/>}
-                <PostBody findPost={fakePost}/>
+                <PostBody findPost={this.state.findPost}/>
                 <CommentsPost comments={comments}/>
             </div>
         );
