@@ -10,10 +10,7 @@ class WrapperMainView extends Component {
         this.state = {
             comments:[],
             posts:[],
-            findPost:{},
-            userPost:{},
-            comentsPost:[],
-            isLoaded: false
+            findPost:{}
         }
         this.findPostSearchBar = this.findPostSearchBar.bind(this);
     }
@@ -23,11 +20,6 @@ class WrapperMainView extends Component {
         this.setState({
             findPost
         })
-        console.log(findPost);
-    }
-
-    findComments( actualPost ) {
-
     }
 
     componentDidMount() {
@@ -42,8 +34,7 @@ class WrapperMainView extends Component {
             .then(res => res.json())
             .then(json => {
                 this.setState({
-                    posts: json,
-                    isLoaded: true
+                    posts: json
                 })
         });
     }
@@ -55,7 +46,7 @@ class WrapperMainView extends Component {
             <div>
                 {<SearchBar posts={posts}  changeFindPost={this.findPostSearchBar}/>}
                 <PostBody findPost={this.state.findPost}/>
-                <CommentsPost comments={comments}/>
+                <CommentsPost comments={comments} actualPost={this.state.findPost}/>
             </div>
         );
     }

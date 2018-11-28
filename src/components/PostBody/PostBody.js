@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom';
 
 const PostBody = ({findPost}) => {
 
-    if (!findPost) {
-        return <div> El Post no fue encontrado</div>
+    if (JSON.stringify(findPost) === '{}') {
+        return <h2>----Post----</h2>
     }
     return (
         <div>
