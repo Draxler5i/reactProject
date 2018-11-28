@@ -2,7 +2,7 @@ import React from 'react';
 import { Dropdown } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
-const onChangeHadler = (changeFindPost, {target}) => changeFindPost(target)
+const onChangeHadler = (changeFindPost, event, {value}) => changeFindPost(value)
 
 const SearchBar = ({ posts, changeFindPost }) => {
     const post = posts.map( ({ id:key, id:value, title:text }) => ({

@@ -18,15 +18,12 @@ class WrapperMainView extends Component {
         this.findPostSearchBar = this.findPostSearchBar.bind(this);
     }
     
-    findPostSearchBar(newPost) {
-        console.log(newPost);
-        const nuevoPost = {
-            //id: {target: {key}}
-        };
+    findPostSearchBar(id) {
+        const findPost = this.state.posts.find((item) => item.id === id);
         this.setState({
-            findPost:nuevoPost
+            findPost
         })
- //       findComments(newPost);
+        console.log(findPost);
     }
 
     findComments( actualPost ) {
