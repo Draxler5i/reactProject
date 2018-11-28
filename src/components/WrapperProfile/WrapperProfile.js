@@ -20,18 +20,21 @@ class WrapperProfile extends Component {
                 users: json
             })
         });
-        
-        
+        // this.setState({
+        //     foundUser: this.findUser()
+        // })
     }
+
     findUser() {
-        const path = this.props.location.pathname.split('/');
-        console.log(path[1]);
+        const path = this.props.match.params.id;
+        //const auxUser = this.state.users.find( user => user.id === +path[1]);
         const auxUser = this.state.users.find( user => user.id === +path[1]);
         console.log(auxUser);
-        
-        
+        console.log(path);
     }
+    
     render() {
+        console.log(this.state.foundUser);
         const { foundUser, users } = this.state;
         const fakeUser = {
             "id": 1,
