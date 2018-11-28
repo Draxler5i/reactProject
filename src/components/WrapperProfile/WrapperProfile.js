@@ -24,7 +24,6 @@ class WrapperProfile extends Component {
             this.setState({
                 foundUser: this.findUser()
             })
-            console.log('yyyyy', this.state.foundUser);
         })
         ;
         
@@ -34,21 +33,12 @@ class WrapperProfile extends Component {
         const path = this.props.match.params.id;
         const auxUser = this.state.users.find( user => user.id === +path);
         return auxUser;
-        // console.log(auxUser);
-        // console.log(path);
     }
     
     render() {
-        console.log('aaaaaaaa',this.state.foundUser);
+        
         const { foundUser, users } = this.state;
-        const fakeUser = {
-            "id": 1,
-            "name": "Leanne Graham",
-            "username": "Bret",
-            "email": "Sincere@april.biz",
-            "address": "Kulas Light"
-            
-        }
+
         return (
             <div>
                 <h1>Wrapper Profile</h1>

@@ -37,7 +37,7 @@ class WrapperMainView extends Component {
     render() {
         const { isLoaded, comments, posts } = this.state;
         const fakePost = {
-            "userId": 3,
+            "userId": 9,
             "id": 1,
             "title": "Titulo de Post",
             "body": "Este es un ejempo de body "
