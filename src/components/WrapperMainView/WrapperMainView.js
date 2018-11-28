@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import CommentsPost from '../CommentsPost/CommentsPost';
-
 import PostBody from '../PostBody/PostBody';
-
 import SearchBar from '../SearchBar/SearchBar';
 
 class WrapperMainView extends Component {
@@ -14,10 +12,27 @@ class WrapperMainView extends Component {
             posts:[],
             findPost:{},
             userPost:{},
+            comentsPost:[],
             isLoaded: false
         }
+        this.findPostSearchBar = this.findPostSearchBar.bind(this);
     }
     
+    findPostSearchBar(newPost) {
+        console.log(newPost);
+        const nuevoPost = {
+            //id: {target: {key}}
+        };
+        this.setState({
+            findPost:nuevoPost
+        })
+ //       findComments(newPost);
+    }
+
+    findComments( actualPost ) {
+
+    }
+
     componentDidMount() {
         fetch('https://jsonplaceholder.typicode.com/comments')
             .then(res => res.json())
@@ -47,9 +62,9 @@ class WrapperMainView extends Component {
 
         return (
             <div>
-                <SearchBar posts={posts}  encontrado={this.state.findPost}/>
+                {<SearchBar posts={posts}  changeFindPost={this.findPostSearchBar}/>}
                 <PostBody findPost={fakePost}/>
-                <CommentsPost comments={comments} findPost={this.state.findPost}/>
+                <CommentsPost comments={comments}/>
             </div>
         );
     }
