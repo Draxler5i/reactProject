@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ProfileUser from '../ProfileUser/ProfileUser';
+import { ProfileUser } from '../ProfileUser';
 import { Container } from 'semantic-ui-react';
 
 class WrapperProfile extends Component {

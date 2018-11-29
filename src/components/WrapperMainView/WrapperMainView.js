@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import CommentsPost from '../CommentsPost/CommentsPost';
-import PostBody from '../PostBody/PostBody';
-import SearchBar from '../SearchBar/SearchBar';
+import { CommentsPost } from '../CommentsPost';
+import { PostBody } from '../PostBody';
+import { SearchBar } from '../SearchBar';
 
 class WrapperMainView extends Component {
     
