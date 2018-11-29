@@ -8,15 +8,15 @@ const SearchBar = ({ posts, changeFindPost }) => {
     const post = posts.map( ({ id:key, id:value, title:text }) => ({
         key, value, text
       }) );
-
-    return <Dropdown
+    
+    return <div> <Dropdown
         placeholder="Select a post"
         search
         selection
         options={post}
         key = {post.key}
         onChange={onChangeHandler.bind({}, changeFindPost)}
-    />
+    /> </div>
 
 };
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './PostBody.css';
 
 const PostBody = ({findPost}) => {
 
@@ -8,10 +9,11 @@ const PostBody = ({findPost}) => {
     }
     return (
         <div>
-            <h1>
-                {JSON.stringify(findPost)}
-            </h1>
-            <div>
+            <h1>{findPost.title}</h1>
+            <p>
+                {findPost.body}
+            </p>
+            <div className="Author">
                 <Link to={`/${findPost.userId}`}>Author</Link>
             </div>
         </div>

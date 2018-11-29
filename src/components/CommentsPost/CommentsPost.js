@@ -3,7 +3,6 @@ import React from 'react';
 const CommentsPost = ({comments, actualPost}) => {
     
     const comentsPost = comments.filter((item) => item.postId === actualPost.id);
-    console.log(comentsPost);
 
     if (JSON.stringify(comentsPost) === '{}') {
         return <h2>----Comments Post----</h2>
