@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ProfileUser from '../ProfileUser/ProfileUser';
+import { Container } from 'semantic-ui-react';
 
 class WrapperProfile extends Component {
 
@@ -37,10 +38,9 @@ class WrapperProfile extends Component {
     
     render() {
         return (
-            <div>
-                <h1>Wrapper Profile</h1>
+            <Container>
                 <ProfileUser user={this.state.foundUser}/>
-            </div>
+            </Container>
         );
 
     }

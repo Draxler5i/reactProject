@@ -1,5 +1,5 @@
 import React from 'react';
-import { Dropdown } from 'semantic-ui-react';
+import { Dropdown, Container, Grid } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 
 const onChangeHandler = (changeFindPost, event, {value}) => changeFindPost(value)
@@ -9,14 +9,17 @@ const SearchBar = ({ posts, changeFindPost }) => {
         key, value, text
       }) );
     
-    return <div> <Dropdown
-        placeholder="Select a post"
-        search
-        selection
-        options={post}
-        key = {post.key}
-        onChange={onChangeHandler.bind({}, changeFindPost)}
-    /> </div>
+    return <Container>
+            <Grid className="segment centered">
+                <Dropdown
+                    placeholder="Select a post"
+                    search
+                    selection
+                    options={post}
+                    key = {post.key}
+                    onChange={onChangeHandler.bind({}, changeFindPost)}/>
+            </Grid>
+        </Container>
 
 };
 

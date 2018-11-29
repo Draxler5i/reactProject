@@ -1,14 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { Container } from 'semantic-ui-react';
 import './PostBody.css';
 
 const PostBody = ({findPost}) => {
 
     if (JSON.stringify(findPost) === '{}') {
-        return <h2>----Post----</h2>
+        return <Container><h2>----Post----</h2></Container>
     }
     return (
-        <div>
+        <Container>
             <h1>{findPost.title}</h1>
             <p>
                 {findPost.body}
@@ -16,7 +17,7 @@ const PostBody = ({findPost}) => {
             <div className="Author">
                 <Link to={`/${findPost.userId}`}>Author</Link>
             </div>
-        </div>
+        </Container>
     );
 };
 
